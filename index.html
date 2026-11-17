@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Apartmani Borovi — smeštaj na Zlatiboru</title>
+  <meta name="description" content="Apartmani Borovi na Zlatiboru: planinski odmor u borovoj šumi, wellness, pešačenje i ski. Studio, porodični apartmani i chalet. Demo sajt izradio WebGlow Studio.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="WebGlow Studio">
+  <meta name="theme-color" content="#1B3A2F">
+  <link rel="canonical" href="https://webglowstudio.github.io/Apartmani/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:site_name" content="Apartmani Borovi">
+  <meta property="og:title" content="Apartmani Borovi — smeštaj na Zlatiboru">
+  <meta property="og:description" content="Planinski odmor na Zlatiboru: topli drveni enterijeri, wellness i šetnje kroz borovu šumu. Demo sajt izradio WebGlow Studio.">
+  <meta property="og:url" content="https://webglowstudio.github.io/Apartmani/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apartmani Borovi — smeštaj na Zlatiboru">
+  <meta name="twitter:description" content="Planinski odmor na Zlatiboru: studio, porodični apartmani i chalet. Demo sajt izradio WebGlow Studio.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Apartmani Borovi",
+    "description": "Planinski apartmani na Zlatiboru, u borovoj šumi, sa wellness sadržajima.",
+    "url": "https://webglowstudio.github.io/Apartmani/",
+    "image": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+    "telephone": "+381605550123",
+    "email": "info@apartmaniborovi.rs",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kraljeve Vode bb",
+      "addressLocality": "Zlatibor",
+      "addressCountry": "RS"
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Besplatan WiFi"},
+      {"@type": "LocationFeatureSpecification", "name": "Parking"},
+      {"@type": "LocationFeatureSpecification", "name": "Sauna"},
+      {"@type": "LocationFeatureSpecification", "name": "Kuhinja"}
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --forest:#1B3A2F;
+      --forest-mid:#234A3C;
+      --moss:#3E6B54;
+      --wood:#8B5E3C;
+      --wood-light:#C4A484;
+      --cream:#F6F0E6;
+      --cream-deep:#EFE6D6;
+      --paper:#FBF7F0;
+      --ink:#1A1612;
+      --muted:#6A5C4E;
+      --line:rgba(27,58,47,.12);
+      --serif:"Playfair Display", Georgia, serif;
+      --sans:"Jost", system-ui, sans-serif;
+      --gutter:clamp(18px,5vw,72px);
+      --max:1160px;
+      --header:76px;
+      --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit;color:inherit}
+    :focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+    .wrap{width:min(100%,var(--max));margin:0 auto;padding:0 var(--gutter)}
+    .serif,h1,h2,h3{font-family:var(--serif);font-style:normal;font-synthesis:none;letter-spacing:-.02em}
+    em,i{font-style:normal}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:#fff;padding:8px 14px;z-index:80}
+    .skip:focus{left:8px}
+    .eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--wood);margin-bottom:10px}
+    .lede{color:var(--muted);font-size:1.05rem;max-width:38em}
+    header{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.9);backdrop-filter:saturate(1.2) blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .25s ease}
+    header.scrolled{box-shadow:0 10px 30px rgba(27,58,47,.08)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:var(--header);gap:16px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo svg{width:36px;height:36px;flex:none}
+    .logo strong{font-family:var(--serif);font-style:normal;font-size:22px;font-weight:600;line-height:1;color:var(--forest)}
+    .logo small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:2px}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{font-size:15px;font-weight:500;color:var(--ink)}
+    .nav-links a:hover{color:var(--forest-mid)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:1px solid transparent;font-size:14px;font-weight:600;cursor:pointer;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-forest{background:var(--forest);color:var(--cream);box-shadow:0 8px 20px rgba(27,58,47,.22)}
+    .btn-forest:hover{background:var(--forest-mid)}
+    .btn-wood{background:var(--wood);color:#fff;box-shadow:0 8px 20px rgba(139,94,60,.25)}
+    .btn-wood:hover{background:#7a5133}
+    .btn-ghost{background:transparent;border-color:rgba(246,240,230,.45);color:var(--cream)}
+    .btn-ghost:hover{background:rgba(255,255,255,.1)}
+    .btn-outline{background:transparent;border-color:var(--line);color:var(--forest)}
+    .btn-outline:hover{background:var(--cream-deep)}
+    .nav-toggle{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+    .nav-toggle span{display:block;width:20px;height:1.5px;background:var(--forest);margin:5px auto;transition:transform .2s ease,opacity .2s ease}
+    header.open .nav-toggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    header.open .nav-toggle span:nth-child(2){opacity:0}
+    header.open .nav-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    @media (max-width:880px){
+      .nav-toggle{display:block}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:var(--header);flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--gutter) 20px}
+      header.open .nav-links{display:flex}
+      .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
+      .nav-links .btn{margin-top:12px;width:100%}
+    }
+    .hero{position:relative;isolation:isolate;min-height:min(92vh,880px);color:var(--cream);display:flex;align-items:flex-end;padding:120px 0 120px}
+    .hero-bg{position:absolute;inset:0;z-index:-1}
+    .hero-bg img{width:100%;height:100%;object-fit:cover}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,28,24,.35) 0%,rgba(16,28,24,.2) 40%,rgba(16,28,24,.78) 100%)}
+    .hero h1{font-size:clamp(40px,7vw,82px);line-height:1.05;font-weight:600;max-width:12ch;margin:0 0 16px}
+    .hero p{max-width:32em;font-size:clamp(17px,2vw,20px);color:var(--cream-deep);margin-bottom:28px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+    .booking{position:relative;margin-top:-72px;z-index:3}
+    .booking-card{background:#fff;border-radius:var(--radius);box-shadow:0 18px 50px rgba(26,22,18,.12);padding:18px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:12px;align-items:end}
+    .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:12px 14px}
+    .field textarea{min-height:120px;resize:vertical}
+    @media (max-width:800px){
+      .hero{align-items:center;padding:130px 0 160px}
+      .booking{margin-top:-48px}
+      .booking-card{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){.booking-card{grid-template-columns:1fr}.booking-card .btn{width:100%}}
+    .booking-msg{display:none;margin-top:14px;background:var(--forest);color:var(--cream);border-radius:16px;padding:14px 18px}
+    .booking-msg.show{display:block}
+    section{padding:88px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+    .section-head h2{font-size:clamp(28px,4vw,44px)}
+    .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+    .intro-photo{border-radius:24px;overflow:hidden;min-height:360px}
+    .intro-photo img{width:100%;height:100%;object-fit:cover;min-height:360px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+    .stat{background:var(--cream);border-radius:16px;padding:16px 14px}
+    .stat b{display:block;font-family:var(--serif);font-style:normal;font-size:28px;color:var(--forest)}
+    .stat span{font-size:13px;color:var(--muted)}
+    @media (max-width:800px){.intro-grid{grid-template-columns:1fr}}
+    .price-note{font-size:13px;color:var(--muted);background:var(--cream);display:inline-block;padding:6px 12px;border-radius:999px}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(26,22,18,.04);transition:transform .25s ease,box-shadow .25s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(26,22,18,.1)}
+    .card img{width:100%;height:240px;object-fit:cover}
+    .card-body{padding:22px}
+    .card-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:8px 0 12px}
+    .card h3{font-size:28px;margin-bottom:4px}
+    .price{font-weight:600;color:var(--forest)}
+    .price small{font-weight:400;color:var(--muted)}
+    @media (max-width:800px){.cards{grid-template-columns:1fr}}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;gap:12px}
+    .gallery button{border:0;padding:0;background:none;cursor:pointer;border-radius:18px;overflow:hidden;position:relative}
+    .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .gallery button:hover img{transform:scale(1.05)}
+    .gallery button:nth-child(1){grid-column:span 2;grid-row:span 2}
+    .gallery button:nth-child(2){grid-column:span 2}
+    @media (max-width:700px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}.gallery button:nth-child(1),.gallery button:nth-child(2){grid-column:span 2;grid-row:span 1}}
+    .lightbox{position:fixed;inset:0;background:rgba(16,24,20,.88);display:none;align-items:center;justify-content:center;z-index:80;padding:24px}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:min(1100px,100%);max-height:88vh;border-radius:12px}
+    .lightbox button{position:absolute;top:16px;right:16px;background:#fff;border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:22px}
+    .amenity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .amenity{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 16px}
+    .amenity svg{width:28px;height:28px;margin-bottom:10px;color:var(--forest)}
+    .amenity h3{font-size:18px;margin-bottom:4px}
+    .amenity p{font-size:14px;color:var(--muted)}
+    @media (max-width:900px){.amenity-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.amenity-grid{grid-template-columns:1fr}}
+    .visit{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
+    .visit-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+    .visit-list li{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+    .visit-list strong{display:block;font-family:var(--serif);font-style:normal;font-size:20px}
+    .map{background:var(--forest);color:var(--cream);border-radius:24px;min-height:100%;padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .map::before{content:"";position:absolute;inset:0;opacity:.25;background:
+      radial-gradient(circle at 30% 40%, #3E6B54 0 2px, transparent 3px),
+      radial-gradient(circle at 70% 60%, #C4A484 0 2px, transparent 3px),
+      linear-gradient(135deg,#1B3A2F,#234A3C 50%,#3E6B54);
+      background-size:22px 22px, 22px 22px, auto;
+    }
+    .map-inner{position:relative;z-index:1}
+    .pin{width:48px;height:48px;border-radius:50%;background:var(--wood);display:grid;place-items:center;margin-bottom:16px}
+    @media (max-width:800px){.visit{grid-template-columns:1fr}}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+    .review img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+    .review-top{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+    .stars{color:var(--wood);letter-spacing:1px}
+    @media (max-width:800px){.reviews{grid-template-columns:1fr}}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:32px}
+    .contact-card{background:var(--forest);color:var(--cream);border-radius:24px;padding:32px}
+    .contact-card a{color:var(--cream)}
+    .contact-card h2{font-size:36px;margin-bottom:12px}
+    .chat-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .btn-viber{background:#7360f2;color:#fff}
+    .btn-wa{background:#25D366;color:#0b1f14}
+    .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-grid .full{grid-column:1/-1}
+    @media (max-width:800px){.contact-grid,.form-grid{grid-template-columns:1fr}}
+    .thanks{display:none;background:var(--cream);border-radius:18px;padding:22px}
+    .thanks.show{display:block}
+    footer{background:var(--forest);color:var(--cream-deep);padding:48px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+    .footer-grid a:hover{color:#fff}
+    .demo-credit{margin-top:28px;padding-top:18px;border-top:1px solid rgba(239,230,214,.15);font-size:14px}
+    .demo-credit a{text-decoration:underline;text-underline-offset:3px}
+    @media (max-width:700px){.footer-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .btn:hover,.card:hover{transform:none}
+      .gallery img{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#sadrzaj">Preskočite na sadržaj</a>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#vrh" aria-label="Apartmani Borovi, početna">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#1B3A2F"/><path fill="#EFE6D6" d="M18 6l-8 10h4.5L9 24h4.5L8 31h20l-5.5-7H27L21.5 16H26z"/><rect x="16.2" y="27" width="3.6" height="5" fill="#C4A484"/></svg>
+        <span><strong>Apartmani Borovi</strong><small>Zlatibor</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Meni">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="Glavni meni">
+        <a href="#apartmani">Apartmani</a>
+        <a href="#galerija">Galerija</a>
+        <a href="#sadrzaji">Sadržaji</a>
+        <a href="#lokacija">Lokacija</a>
+        <a href="#utisci">Utisci</a>
+        <a class="btn btn-forest" href="#upit">Pošaljite upit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="hero" id="vrh" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1800&q=80" alt="Drvena koliba u borovoj šumi pod snegom na planini" width="1800" height="1200">
+      </div>
+      <div class="wrap">
+        <p class="eyebrow" style="color:#C4A484">Zlatibor · planina i odmor</p>
+        <h1 id="hero-title">Odmor među borovima</h1>
+        <p>Topli drveni enterijeri, tišina šume i wellness posle šetnje. Apartmani Borovi su vaša baza za Zlatibor — leti i zimi.</p>
+        <div class="hero-actions">
+          <a class="btn btn-wood" href="#apartmani">Pogledajte smeštaj</a>
+          <a class="btn btn-ghost" href="#lokacija">Šta posetiti</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap booking">
+      <form class="booking-card" id="booking-form" action="#" method="post">
+        <div class="field">
+          <label for="dolazak">Dolazak</label>
+          <input type="date" id="dolazak" name="dolazak" required>
+        </div>
+        <div class="field">
+          <label for="odlazak">Odlazak</label>
+          <input type="date" id="odlazak" name="odlazak" required>
+        </div>
+        <div class="field">
+          <label for="gosti">Gosti</label>
+          <select id="gosti" name="gosti">
+            <option>1 gost</option>
+            <option selected>2 gosta</option>
+            <option>3 gosta</option>
+            <option>4 gosta</option>
+            <option>5 gostiju</option>
+            <option>6 gostiju</option>
+          </select>
+        </div>
+        <button class="btn btn-forest" type="submit">Proverite termine</button>
+      </form>
+      <div class="booking-msg" id="booking-msg" role="status">Ovo je demo kalendar. Termini se ne proveravaju uživo — ostavite upit ispod i na pravom sajtu stiže vam odgovor u inbox ili na Viber.</div>
+    </div>
+
+    <section id="o-nama">
+      <div class="wrap intro-grid">
+        <div class="reveal">
+          <p class="eyebrow">O nama</p>
+          <h2>Malo izvan užurbanog centra, dovoljno blizu svega</h2>
+          <p class="lede" style="margin-top:16px">Apartmani Borovi su zamišljeni kao tiho utočište u borovoj šumi, nekoliko minuta od Kraljevih Voda. Svaki smeštaj ima kuhinju, grejanje i svoje dvorište ili terasu, a gosti dele saunu i prostor za odmor.</p>
+          <div class="stats">
+            <div class="stat"><b>4</b><span>tipa smeštaja</span></div>
+            <div class="stat"><b>2–6</b><span>gostiju po apartmanu</span></div>
+            <div class="stat"><b>350 m</b><span>do staze kroz šumu</span></div>
+          </div>
+        </div>
+        <div class="intro-photo reveal">
+          <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1200&q=80" alt="Topli drveni enterijer planinskog apartmana sa kaminom" width="1200" height="900">
+        </div>
+      </div>
+    </section>
+
+    <section id="apartmani" style="background:var(--cream)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Smeštaj</p>
+            <h2>Izaberite svoj apartman</h2>
+          </div>
+          <p class="price-note">Cene su primer</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Studio Bor — svetla spavaća soba sa mesinganim krevetom" width="1200" height="800">
+            <div class="card-body">
+              <h3>Studio Bor</h3>
+              <div class="card-meta"><span>do 2 gosta</span><span>28 m²</span><span>prizemlje</span></div>
+              <p>Kompaktan studio sa kuhinjom, terasom prema šumi i udobnim bračnim krevetom. Idealan za parove.</p>
+              <p class="price" style="margin-top:14px">45 € <small>/ noć</small></p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80" alt="Apartman Jela — svetla spavaća soba sa belom posteljinom" width="1200" height="800">
+            <div class="card-body">
+              <h3>Apartman Jela</h3>
+              <div class="card-meta"><span>3–4 gosta</span><span>48 m²</span><span>balkon</span></div>
+              <p>Odvojen dnevni boravak, kuhinja i spavaća soba. Dodatni kauč na razvlačenje za dete ili trećeg gosta.</p>
+              <p class="price" style="margin-top:14px">75 € <small>/ noć</small></p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" alt="Porodični apartman Javor — prostrana spavaća soba" width="1200" height="800">
+            <div class="card-body">
+              <h3>Porodični Javor</h3>
+              <div class="card-meta"><span>do 6 gostiju</span><span>72 m²</span><span>dve spavaće</span></div>
+              <p>Dve spavaće sobe, veliki sto i potpuno opremljena kuhinja. Porodični smeštaj sa parkingom ispred ulaza.</p>
+              <p class="price" style="margin-top:14px">110 € <small>/ noć</small></p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?auto=format&fit=crop&w=1200&q=80" alt="Chalet Smrča — drvena kuća u šumi" width="1200" height="800">
+            <div class="card-body">
+              <h3>Chalet Smrča</h3>
+              <div class="card-meta"><span>do 4 gosta</span><span>60 m²</span><span>kamin + jacuzzi</span></div>
+              <p>Samostalni chalet sa kaminom, hidromasažnom kadom i privatnim dvorištem. Za sporiji, tiši odmor.</p>
+              <p class="price" style="margin-top:14px">140 € <small>/ noć</small></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerija">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Galerija</p>
+            <h2>Šuma, interijer i tišina</h2>
+          </div>
+        </div>
+        <div class="gallery" id="gallery">
+          <button type="button" data-full="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" alt="Sunčeva svetlost kroz visoku borovu šumu" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" alt="Planinski vrhovi iznad doline" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=800&q=80" alt="Doručak sa svežim voćem i pecivom" width="800" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Unutrašnji wellness bazen sa ležaljkama" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Opremljena kuhinja smeštaja" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80" alt="Kupatilo sa tuš kabinom i svetlim pločicama" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80" alt="Masaža u wellness prostoru" width="1200" height="800"></button>
+          <button type="button" data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80" alt="Jezero okruženo planinama u sumrak" width="1600" height="900"></button>
+        </div>
+      </div>
+    </section>
+    <div class="lightbox" id="lightbox" hidden>
+      <button type="button" aria-label="Zatvori">×</button>
+      <img alt="">
+    </div>
+
+    <section id="sadrzaji" style="background:var(--cream)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Sadržaji</p>
+            <h2>Sve što treba za sporiji ritam</h2>
+          </div>
+        </div>
+        <div class="amenity-grid">
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 13a7 7 0 0 1 14 0"/><path d="M8 13a4 4 0 0 1 8 0"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/></svg><h3>Besplatan WiFi</h3><p>Brza veza u svakom apartmanu, ako baš morate da proverite mejl.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="8" rx="1.5"/><path d="M5 11V8l4-3h6l4 3v3"/><circle cx="7.5" cy="19" r="1.4"/><circle cx="16.5" cy="19" r="1.4"/></svg><h3>Parking</h3><p>Mesto ispred smeštaja, bez dodatnog plaćanja i traženja u sezoni.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15h16v3H4z"/><path d="M8 15V8h8v7"/><path d="M10 8V5h4v3"/></svg><h3>Kuhinja</h3><p>Šporet, frižider, posuđe i aparat za kafu — kuvajte kad vam odgovara.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 20c0-6 4-10 6-12 2 2 6 6 6 12z"/><path d="M9 17c.5-2 1.5-3.5 3-5"/></svg><h3>Kamin</h3><p>U chaletu i većim apartmanima, za večeri kad napolju zaveje.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="8" width="14" height="10" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><h3>Sauna</h3><p>Zajednička finska sauna za goste, po dogovoru tokom boravka.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="6"/><path d="M8 13c.5-3 2-5 4-6"/></svg><h3>Hidromasažna kada</h3><p>U chaletu Smrča, za oporavak posle staze ili skijanja.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18h16M6 18l2-8h8l2 8"/><path d="M9 10V7h6v3"/></svg><h3>Roštilj i dvorište</h3><p>Bašta sa setom za roštilj i dečijim kutkom, okružena borovima.</p></article>
+          <article class="amenity reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 14h16M6 10h12M8 6h8"/><path d="M7 14v4M17 14v4"/></svg><h3>Grejanje i klima</h3><p>Toplo zimi, prijatno leti. Posteljina i peškiri su uključeni.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokacija">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Lokacija</p>
+            <h2>Šta posetiti u blizini</h2>
+            <p class="lede" style="margin-top:10px">Nalazimo se u blizini Kraljevih Voda, sa lakim pristupom stazama, ski-stazama i izletima oko Zlatibora.</p>
+          </div>
+        </div>
+        <div class="visit">
+          <ul class="visit-list reveal">
+            <li><strong>Kraljeve Vode</strong> Šetnja, kafići i jezero — nekoliko minuta vožnje ili duža šetnja šumom.</li>
+            <li><strong>Tornik</strong> Ski-staze zimi, panoramski pogled i biciklističke staze leti.</li>
+            <li><strong>Stopića pećina</strong> Jedan od najpoznatijih izleta, oko pola sata vožnje.</li>
+            <li><strong>Vodopad Gostilje</strong> Kratka šetnja do vodopada, pogodno i za porodice.</li>
+            <li><strong>Ribničko jezero</strong> Tišina, pecanje i piknik van glavne šetališne zone.</li>
+          </ul>
+          <div class="map reveal" aria-label="Mapa je prikaz za demo sajt">
+            <div class="map-inner">
+              <div class="pin" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#EFE6D6"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></div>
+              <p class="eyebrow" style="color:#C4A484">Mapa je prikaz za demo sajt</p>
+              <h3 style="font-size:30px;margin-bottom:8px">Kraljeve Vode bb, Zlatibor</h3>
+              <p>Adresa je primer. Na pravom sajtu ovde stoji interaktivna mapa i tačno rastojanje do centra.</p>
+            </div>
+            <p class="map-inner" style="margin-top:24px;font-size:14px;opacity:.85">Zlatibor, Srbija · lako dostupno iz Užica i Beograda</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="utisci" style="background:var(--cream)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Primer utisaka</p>
+            <h2>Šta gosti ističu</h2>
+          </div>
+        </div>
+        <div class="reviews">
+          <article class="review reveal">
+            <div class="review-top">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="" width="200" height="200">
+              <div><strong>Milica R.</strong><div>Beograd</div><div class="stars" aria-label="5 od 5">★★★★★</div></div>
+            </div>
+            <p>„Ustajanje uz miris bora i kafu na terasi — baš onakav odmor kakav smo tražili. Deca su ceo dan bila napolju, a uveče uz kamin."</p>
+          </article>
+          <article class="review reveal">
+            <div class="review-top">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="" width="200" height="200">
+              <div><strong>Nikola P.</strong><div>Novi Sad</div><div class="stars" aria-label="5 od 5">★★★★★</div></div>
+            </div>
+            <p>„Chalet je topao, tih i stvarno blizu staza. Posle skijanja smo išli pravo u saunu. Sve je bilo čisto i spremno kad smo stigli."</p>
+          </article>
+          <article class="review reveal">
+            <div class="review-top">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="" width="200" height="200">
+              <div><strong>Ivana i Stefan</strong><div>Niš</div><div class="stars" aria-label="5 od 5">★★★★★</div></div>
+            </div>
+            <p>„Idealno za par: studio je mali, ali pažljivo sređen. Domaćini su odgovorili odmah i predložili šetnju do jezera."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="upit">
+      <div class="wrap contact-grid">
+        <div class="contact-card reveal">
+          <p class="eyebrow" style="color:#C4A484">Kontakt</p>
+          <h2>Zakažite boravak</h2>
+          <p>Pozovite nas, pišite na Viber ili WhatsApp, ili ostavite upit u formi. Na demo sajtu forme ne šalju poruke — na pravom sajtu stižu direktno vama.</p>
+          <p style="margin-top:20px"><strong>Telefon</strong><br><a href="tel:+381605550123">+381 60 555 0123</a></p>
+          <p style="margin-top:12px"><strong>Mejl</strong><br><a href="mailto:info@apartmaniborovi.rs">info@apartmaniborovi.rs</a></p>
+          <p style="margin-top:12px"><strong>Adresa</strong><br>Kraljeve Vode bb, Zlatibor</p>
+          <div class="chat-btns">
+            <a class="btn btn-viber" href="viber://chat?number=%2B381605550123">Viber</a>
+            <a class="btn btn-wa" href="https://wa.me/381605550123">WhatsApp</a>
+          </div>
+        </div>
+        <div class="form-card reveal">
+          <h3 style="font-size:28px;margin-bottom:8px">Pošaljite upit</h3>
+          <p style="color:var(--muted);margin-bottom:18px">Forma je demo i ne šalje podatke.</p>
+          <form id="inquiry-form" action="#" method="post">
+            <div class="form-grid" id="form-panel">
+              <div class="field"><label for="ime">Ime i prezime</label><input id="ime" name="ime" required autocomplete="name"></div>
+              <div class="field"><label for="email">Mejl</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel"></div>
+              <div class="field"><label for="apartman">Apartman</label>
+                <select id="apartman" name="apartman">
+                  <option>Studio Bor</option>
+                  <option>Apartman Jela</option>
+                  <option>Porodični Javor</option>
+                  <option>Chalet Smrča</option>
+                  <option>Još biram</option>
+                </select>
+              </div>
+              <div class="field"><label for="od">Dolazak</label><input id="od" name="od" type="date"></div>
+              <div class="field"><label for="do">Odlazak</label><input id="do" name="do" type="date"></div>
+              <div class="field full"><label for="poruka">Poruka</label><textarea id="poruka" name="poruka" placeholder="Broj gostiju, posebne želje..."></textarea></div>
+              <div class="full"><button class="btn btn-forest" type="submit">Pošaljite upit</button></div>
+            </div>
+          </form>
+          <div class="thanks" id="thanks" tabindex="-1">Hvala vam! Ovo je demo forma — poruka nije poslata. Na pravom sajtu upit stiže na mejl ili Viber smeštaja.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <p class="serif" style="font-size:28px;color:#fff">Apartmani Borovi</p>
+        <p>Planinski smeštaj na Zlatiboru, među borovima.</p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#fff;margin-bottom:8px">Na stranici</p>
+        <p><a href="#apartmani">Apartmani</a><br><a href="#galerija">Galerija</a><br><a href="#sadrzaji">Sadržaji</a><br><a href="#lokacija">Lokacija</a><br><a href="#upit">Kontakt</a></p>
+      </div>
+      <div>
+        <p style="font-weight:600;color:#fff;margin-bottom:8px">Napomena</p>
+        <p>Cene, utisci, adresa i fotografije su primer. Fotografije su stock snimci.</p>
+      </div>
+    </div>
+    <div class="wrap demo-credit">Demo sajt: <a href="https://webglowstudio.github.io/Webglowstudioportfolio/">WebGlow Studio</a></div>
+  </footer>
+
+  <script>
+  (function(){
+    var header=document.querySelector("header");
+    var toggle=document.querySelector(".nav-toggle");
+    if(toggle){
+      toggle.addEventListener("click",function(){
+        var open=header.classList.toggle("open");
+        toggle.setAttribute("aria-expanded",open?"true":"false");
+      });
+    }
+    document.querySelectorAll(".nav-links a").forEach(function(a){
+      a.addEventListener("click",function(){
+        header.classList.remove("open");
+        if(toggle) toggle.setAttribute("aria-expanded","false");
+      });
+    });
+    window.addEventListener("scroll",function(){
+      header.classList.toggle("scrolled",window.scrollY>8);
+    },{passive:true});
+
+    var today=new Date().toISOString().slice(0,10);
+    ["dolazak","odlazak","od","do"].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el) el.min=today;
+    });
+
+    var booking=document.getElementById("booking-form");
+    var bookingMsg=document.getElementById("booking-msg");
+    if(booking){
+      booking.addEventListener("submit",function(e){
+        e.preventDefault();
+        if(!booking.checkValidity()){booking.reportValidity();return;}
+        var a=document.getElementById("dolazak").value;
+        var b=document.getElementById("odlazak").value;
+        if(b && a && b<=a){document.getElementById("odlazak").setCustomValidity("Odlazak mora biti posle dolaska.");document.getElementById("odlazak").reportValidity();return;}
+        document.getElementById("odlazak").setCustomValidity("");
+        bookingMsg.classList.add("show");
+      });
+    }
+
+    var form=document.getElementById("inquiry-form");
+    var panel=document.getElementById("form-panel");
+    var thanks=document.getElementById("thanks");
+    if(form){
+      form.addEventListener("submit",function(e){
+        e.preventDefault();
+        if(!form.checkValidity()){form.reportValidity();return;}
+        panel.hidden=true;
+        thanks.classList.add("show");
+        thanks.focus();
+      });
+    }
+
+    var lb=document.getElementById("lightbox");
+    var lbImg=lb.querySelector("img");
+    var close=lb.querySelector("button");
+    document.getElementById("gallery").addEventListener("click",function(e){
+      var btn=e.target.closest("button");
+      if(!btn) return;
+      var img=btn.querySelector("img");
+      lbImg.src=btn.getAttribute("data-full");
+      lbImg.alt=img?img.alt:"";
+      lb.hidden=false;
+      lb.classList.add("open");
+    });
+    function closeLb(){lb.classList.remove("open");lb.hidden=true;lbImg.src="";}
+    close.addEventListener("click",closeLb);
+    lb.addEventListener("click",function(e){if(e.target===lb) closeLb();});
+    document.addEventListener("keydown",function(e){if(e.key==="Escape") closeLb();});
+
+    if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
+      },{threshold:.12});
+      document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+    } else {
+      document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});
+    }
+  })();
+  </script>
+</body>
+</html>
